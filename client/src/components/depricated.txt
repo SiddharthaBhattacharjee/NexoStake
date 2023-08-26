@@ -1,0 +1,78 @@
+import React, { useState } from "react";
+
+function Home() {
+    let arr = [4,5,6,7,8,9];
+    function importAll(r) {
+        let images = {};
+        r.keys().map((item, index) => {
+            if (arr.includes(parseInt(item.replace('./', '').replace('.png', '')))) {
+                images[item.replace('./', '')] = r(item);
+            }
+        });
+        return images;
+    }
+    const teamCards = importAll(
+        require.context(
+            '../images/cards/',
+            false,
+            /\.(png|jpe?g|svg)$/
+        )
+    );
+    const [overlayImage, setOverlayImage] = useState(null);
+
+    const handleCardClick = (card) => {
+        setOverlayImage(card);
+    }
+
+    const handleOverlayClick = () => {
+        setOverlayImage(null);
+    }
+
+    return (
+        <div style={{width:'100vw',height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column', marginTop:'3em'}}>
+            <div className="battleDiv">
+                <button variant="primary" className="battle-button">
+                    Battle
+                </button>
+            </div>
+            <div style={{width:'70%',marginTop:'5em'}}>
+                <h4 style={{color:'white'}}>Your Team</h4>
+                <div className="TeamDiv">
+                    {Object.values(teamCards).map((card, index) => (
+                        <img
+                            src={card}
+                            alt={card}
+                            className=" object-cover h-20 mx-auto object-center rounded-md"
+                            style={{width:"100px"}}
+                            onClick={() => handleCardClick(card)}
+                        />
+                    ))}
+                </div>
+            </div>
+            {overlayImage && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                    onClick={handleOverlayClick}
+                >
+                    <img
+                        src={overlayImage}
+                        alt={overlayImage}
+                        style={{maxWidth: '90%', maxHeight: '90%'}}
+                    />
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default Home;
