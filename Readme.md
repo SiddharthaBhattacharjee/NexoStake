@@ -66,7 +66,7 @@ Nexo Stake stands at the forefront of betting platform innovation, leveraging bl
 
 # Contact Us 📞
 
--[Siddhartha Bhattacharjee]('https://siddhartha-portfolio.vercel.app/')
--[Prayasu Satapathy](https://linktr.ee/prayasu)
--[Arun Jangra](https://arunjangra.vercel.app/)
--[Aryan Suresh Reddy](https://github.com/Aryanreddy3)
+- [Siddhartha Bhattacharjee](https://siddhartha-portfolio.vercel.app/)
+- [Prayasu Satapathy](https://linktr.ee/prayasu)
+- [Arun Jangra](https://arunjangra.vercel.app/)
+- [Aryan Suresh Reddy](https://github.com/Aryanreddy3)
