@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://siddhartha-portfolio.vercel.app/">
-    <img alt = "Img1" src = "./Images/img1.png">
+    <img alt = "Img1" src = "./Images/img0.jpeg">
   </a>
 </p>
 <h1 align="center" >NexoStake : A Decentralised future of analytical opinion trading.</h1>
@@ -59,3 +59,14 @@ Nexo Stake caters to various user profiles with intuitive interfaces. Casual pun
 # Conclusion 🙌
 
 Nexo Stake stands at the forefront of betting platform innovation, leveraging blockchain's potential to create a secure, transparent, and engaging ecosystem. By redefining user interaction, trust, and integrity, we empower individuals to confidently engage in predictions, transforming the betting landscape into one of fairness, inclusivity, and opportunity. Join us in shaping the future of betting with Nexo Stake. 🙏
+
+<a href="https://siddhartha-portfolio.vercel.app/">
+    <img alt = "Img1" src = "./Images/img1.png">
+  </a>
+
+# Contact Us 📞
+
+-[Siddhartha Bhattacharjee]('https://siddhartha-portfolio.vercel.app/')
+-[Prayasu Satapathy](https://linktr.ee/prayasu)
+-[Arun Jangra](https://arunjangra.vercel.app/)
+-[Aryan Suresh Reddy](https://github.com/Aryanreddy3)
