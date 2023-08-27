@@ -1,8 +1,8 @@
 import { ethers } from "hardhat";
 
 const createBet = async () => {
-  const factory_addresss = "0x100f791A9378577f389B5da3c7a87e95115e5e5b";
-  const betToken_address = "0xe20ce43eEe3fF1075cdE0f8c1F062670552BBcBb";
+  const factory_addresss = "0xA9001d33133d2D88F41A95215F68036F3D7044E4";
+  const betToken_address = "0xa3930611B6DA53969748B0359DE449f9dc8fF3E6";
 
   const signers = await ethers.getSigners();
   const owner = signers[0];
@@ -21,7 +21,7 @@ const createBet = async () => {
   const _price = ethers.parseUnits("10", 18);
 
   const txn = await factory_contract.createNewBet(
-    "100010001",
+    "8",
     100,
     _price,
     _price,
