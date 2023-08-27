@@ -9,6 +9,10 @@ import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HowPage from './components/How';
 import PortfolioPage from './components/Portfolio';
+import { useContext } from 'react';
+import { GlobalContext, GlobalProvider } from './GlobalContext';
+
+
 import {
   BrowserRouter as Router,
   Route,
@@ -17,39 +21,9 @@ import {
 } from "react-router-dom";
 
 function App() {
-
-  const [currentAccount, setCurrentAccount] = useState('');
-  const [correctNetwork, setCorrectNetwork] = useState(false);
-
+  const { currentAccount, setCurrentAccount, correctNetwork, setCorrectNetwork, connectWallet, placeBet, transferShares, redeemBet, isBetting } = useContext(GlobalContext);
   const Register = async () => {
     window.open('https://evm.ngd.network/', '_blank');
-  }
-
-  const connectWallet = async () => {
-    try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        alert('Metamask Not Found ! Get MetaMask and Try Again.');
-        return;
-      }
-
-      let chainId = await ethereum.request({ method: 'eth_chainId' });
-
-      const NeoChainId = '0x2d5311';
-      if (chainId !== NeoChainId) {
-        alert('Please Connect to Neo Testnet');
-        return;
-      }
-      else {
-        setCorrectNetwork(true);
-      }
-
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      setCurrentAccount(accounts[0]);
-      console.log(currentAccount)
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   useEffect(() => {
@@ -104,4 +78,10 @@ function App() {
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>
+  );
+}

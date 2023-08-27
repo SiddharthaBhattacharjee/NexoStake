@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
-function CustomCard({ image, description, yesPrice, noPrice, onClick }) {
+function CustomCard({ image, description, yesPrice, noPrice, onClick, id }) {
     return (
         <Card style={{ width: '18rem', margin: '1rem', cursor:'pointer',  }} className='box' onClick={onClick}>
             <Card.Img variant="top" style={{height:"50%"}} src={image} />

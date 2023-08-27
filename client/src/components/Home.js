@@ -11,7 +11,8 @@ for(let i=1;i<=length;i++){
             image:"/cards/"+i+".jpeg",
             description: news[i],
             yesPrice:1,
-            noPrice:1
+            noPrice:1,
+            id:i
         }
     )
 }
@@ -39,6 +40,7 @@ function Home() {
                       yesPrice={`Yes: $ ${item.yesPrice}`}
                       noPrice={`No: $ ${item.noPrice}`}
                       onClick={() => handleCardClick(item)}
+                      id = {item.id}
                   />
               ))}
           </div>
@@ -57,7 +59,7 @@ function Home() {
                   }}
                   onClick={handleOverlayClick}
               >
-                  <BuySellCard buyPrice={selectedCard.yesPrice} sellPrice={selectedCard.noPrice} desc={selectedCard.description} />
+                  <BuySellCard buyPrice={selectedCard.yesPrice} sellPrice={selectedCard.noPrice} desc={selectedCard.description} id={selectedCard.id} />
               </div>
           )}
       </div>
